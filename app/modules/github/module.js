@@ -56,6 +56,16 @@ angular.module('github_light', ['ngResource'])
                         toReturn.completed = true;
                     });
 
+                    function compare(a, b) {
+                        // sort jaxb2-maven-plugin below jaxb-maven-plugin
+                        if (a.name.startsWith("jaxb2-")) {
+                            return -1;
+                        }
+                        return 0;
+                    }
+
+                    this.tagList.sort(compare);
+
                     // All done.
                     return this;
                 };
