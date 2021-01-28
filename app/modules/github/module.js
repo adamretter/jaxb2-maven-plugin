@@ -79,5 +79,5 @@ angular.module('github_light', ['ngResource'])
         //
         // a) The Repo owner ("mojohaus" for all mojohaus repos)
         // b) The Repo name  ("jaxb2-maven-plugin" in this case; use appropriate repo ID)
-        $scope.repo = docsService.init('mojohaus', 'jaxb2-maven-plugin');
+        $scope.repo = docsService.init('evolvedbinary', 'mojohaus-jaxb-maven-plugin');
     }]);
