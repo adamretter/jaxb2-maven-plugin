@@ -54,7 +54,8 @@ angular.module('github_light', ['ngResource'])
                     // Find the tag list
                     this.tagList = tagService.list({prop: 'value'}, {owner: this.owner, name: this.name}, function () {
                         toReturn.completed = true;
-                    }).then(function(tags) {
+                    });
+                    this.tagList = (this.tagList.$promise || this.tagList).then(function(tags) {
                         // sort jaxb2-maven-plugin below jaxb-maven-plugin
                         tags.sort(function(a, b) {
                             if (a.name.startsWith("jaxb2-")) {
