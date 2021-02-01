@@ -50,7 +50,7 @@ angular.module('github_light', ['ngResource'])
                 me.completed = false;
 
                 // Public API
-                me.init = function (repoOwner, repoName, $scope) {
+                me.init = function (repoOwner, repoName) {
                     me.owner = repoOwner;
                     me.name = repoName;
 
@@ -68,7 +68,7 @@ angular.module('github_light', ['ngResource'])
                             }
                             return 0;
                         });
-                        $scope.tagList = me.tagList = tags;
+                        me.tagList = tags;
                     }));
 
                     // All done.
@@ -94,5 +94,5 @@ angular.module('github_light', ['ngResource'])
         //
         // a) The Repo owner ("mojohaus" for all mojohaus repos)
         // b) The Repo name  ("jaxb2-maven-plugin" in this case; use appropriate repo ID)
-        $scope.repo = docsService.init('evolvedbinary', 'mojohaus-jaxb-maven-plugin', $scope);
+        $scope.repo = docsService.init('evolvedbinary', 'mojohaus-jaxb-maven-plugin');
     }]);
